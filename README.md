@@ -9,10 +9,13 @@ This project has two parts :Machine learning model development  and dating appli
 ### Installation
 
  To install and run the model
-- clone the file from the repositry including the data available at <a href="Personality Based Dating App/Machine_Learning/ModelTraining/personality_from_tweets.csv">Data</a> 
+- clone the file from the repositry including the data available at <a href="
+Personality_based_Dating_App_using_NLP_from_Tweets/PersonalityClassifier/
+">Data</a> 
+- git clone https://github.com/Txy822/Personality_based_Dating_App_using_NLP_from_Tweets.git
 - All libraries and packages are available on the file itself.
 - Create google account and import file to google colab 
-- Run each section of the code cell by cell. 
+- Run each section of the code. 
 
 ### Requirements 
 1. Tensorflow and tensorflow_hub
@@ -27,7 +30,7 @@ The apllication is developed using Android Studio and java programming language.
 ### Installation and running 
 
 - Clone the repositry which file is available 
-- git clone https://git-teaching.cs.bham.ac.uk/mod-ug-proj-2021/txy822.git
+- git clone https://github.com/Txy822/Personality_based_Dating_App_using_NLP_from_Tweets.git
 - Import it to android  studio.
 - connect it to emulator  or android device
 
@@ -39,6 +42,7 @@ The apllication is developed using Android Studio and java programming language.
 
 Some sample UI of the application
 
-<img src="Android_App/app/src/main/res/drawable/ui.png" alt ="Sample Application UI "/>
+<img src="DatingApp/app/src/main/res/drawable/ui.png" alt ="Sample Application UI "/>
+
 
 
