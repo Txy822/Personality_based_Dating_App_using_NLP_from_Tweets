@@ -2,6 +2,10 @@
 # Personality based Dating Application using NLP from Twitter Tweets
 
 This project has two parts :Machine learning model development  and dating application software development
+The over all structure of the project looks like as:
+
+<img src="PersonalityClassifier/Images/Structural_design_dating_app.png" alt ="Overall structure of the app "/>
+
 ## 1. Personality classifier model 
  - It classifiy  and predict personality from tweets. 
  - Developed by python using google colab.
@@ -22,6 +26,8 @@ Personality_based_Dating_App_using_NLP_from_Tweets/PersonalityClassifier/
 2. Transformer
 3. NLPAUG
 4. TFLITE model maker
+
+
 
 ## 2. Dating application
 
