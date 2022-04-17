@@ -1,0 +1,246 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: ChatRecyclerAdapter</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.txy822.android_personality_based_dating_app.adapter</a> ]
+</div>
+
+<h1>Coverage Summary for Class: ChatRecyclerAdapter (com.txy822.android_personality_based_dating_app.adapter)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">ChatRecyclerAdapter</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 20)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">ChatRecyclerAdapter$ReceiverViewHolder</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 4)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">ChatRecyclerAdapter$SenderViewHolder</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 4)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">ChatRecyclerAdapter$ViewHolder</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 10)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 30)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.txy822.android_personality_based_dating_app.adapter;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import android.content.Context;
+<i>4</i>&nbsp;import android.view.LayoutInflater;
+<i>5</i>&nbsp;import android.view.View;
+<i>6</i>&nbsp;import android.view.ViewGroup;
+<i>7</i>&nbsp;import android.widget.TextView;
+<i>8</i>&nbsp;
+<i>9</i>&nbsp;import androidx.annotation.NonNull;
+<i>10</i>&nbsp;import androidx.recyclerview.widget.RecyclerView;
+<i>11</i>&nbsp;
+<i>12</i>&nbsp;import com.google.firebase.auth.FirebaseAuth;
+<i>13</i>&nbsp;import com.txy822.android_personality_based_dating_app.R;
+<i>14</i>&nbsp;import com.txy822.android_personality_based_dating_app.utils.Chat;
+<i>15</i>&nbsp;import com.txy822.android_personality_based_dating_app.ChatActivity;
+<i>16</i>&nbsp;
+<i>17</i>&nbsp;
+<i>18</i>&nbsp;import java.util.List;
+<i>19</i>&nbsp;
+<i>20</i>&nbsp;/**
+<i>21</i>&nbsp; * ChatRecyclerAdapter
+<i>22</i>&nbsp; */
+<i>23</i>&nbsp;public class ChatRecyclerAdapter extends RecyclerView.Adapter&lt;RecyclerView.ViewHolder&gt; {
+<i>24</i>&nbsp;    Context context;
+<i>25</i>&nbsp;    List&lt;Chat&gt; mChatList;
+<i>26</i>&nbsp;    FirebaseAuth mAuth;
+<b class="nc"><i>27</i>&nbsp;    public ChatRecyclerAdapter(Context context, List&lt;Chat&gt; mChatList) {</b>
+<b class="nc"><i>28</i>&nbsp;        this.context = context;</b>
+<b class="nc"><i>29</i>&nbsp;        this.mChatList = mChatList;</b>
+<b class="nc"><i>30</i>&nbsp;        mAuth =FirebaseAuth.getInstance();</b>
+<i>31</i>&nbsp;    }
+<i>32</i>&nbsp;
+<i>33</i>&nbsp;    @NonNull
+<i>34</i>&nbsp;    @Override
+<i>35</i>&nbsp;    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+<b class="nc"><i>36</i>&nbsp;        View view = null;</b>
+<b class="nc"><i>37</i>&nbsp;        if(viewType==0){</b>
+<b class="nc"><i>38</i>&nbsp;            view = LayoutInflater.from(context).inflate(R.layout.sender_single_item,parent,false);</b>
+<b class="nc"><i>39</i>&nbsp;            return new SenderViewHolder(view);</b>
+<i>40</i>&nbsp;        }
+<i>41</i>&nbsp;        else{
+<b class="nc"><i>42</i>&nbsp;            view = LayoutInflater.from(context).inflate(R.layout.receiver_single_item,parent,false);</b>
+<b class="nc"><i>43</i>&nbsp;            return new ReceiverViewHolder(view);</b>
+<i>44</i>&nbsp;        }
+<i>45</i>&nbsp;
+<i>46</i>&nbsp;    }
+<i>47</i>&nbsp;
+<i>48</i>&nbsp;    @Override
+<i>49</i>&nbsp;    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+<b class="nc"><i>50</i>&nbsp;        if(holder.getItemViewType()==0){</b>
+<b class="nc"><i>51</i>&nbsp;            SenderViewHolder senderViewHolder= (SenderViewHolder) holder;</b>
+<b class="nc"><i>52</i>&nbsp;            senderViewHolder.mMessage.setText(mChatList.get(position).getMessage());</b>
+<b class="nc"><i>53</i>&nbsp;        }else{</b>
+<b class="nc"><i>54</i>&nbsp;            ReceiverViewHolder receiverViewHolder= (ReceiverViewHolder) holder;</b>
+<b class="nc"><i>55</i>&nbsp;            receiverViewHolder.mMessage.setText(mChatList.get(position).getMessage());</b>
+<i>56</i>&nbsp;        }
+<i>57</i>&nbsp;    }
+<i>58</i>&nbsp;    /**
+<i>59</i>&nbsp;     * Return the number of views available.
+<i>60</i>&nbsp;     */
+<i>61</i>&nbsp;    @Override
+<i>62</i>&nbsp;    public int getItemCount() {
+<b class="nc"><i>63</i>&nbsp;        return mChatList.size();</b>
+<i>64</i>&nbsp;    }
+<i>65</i>&nbsp;
+<i>66</i>&nbsp;    /**
+<i>67</i>&nbsp;     * Return the Fragment associated with a specified position.
+<i>68</i>&nbsp;     * @param position
+<i>69</i>&nbsp;     */
+<i>70</i>&nbsp;    @Override
+<i>71</i>&nbsp;    public int getItemViewType(int position) {
+<b class="nc"><i>72</i>&nbsp;        if(mChatList.get(position).getFrom().equals(mAuth.getCurrentUser().getUid())){</b>
+<b class="nc"><i>73</i>&nbsp;            return 0;</b>
+<i>74</i>&nbsp;        }
+<b class="nc"><i>75</i>&nbsp;        return 1;</b>
+<i>76</i>&nbsp;    }
+<i>77</i>&nbsp;
+<i>78</i>&nbsp;    public class ViewHolder extends RecyclerView.ViewHolder{
+<i>79</i>&nbsp;
+<b class="nc"><i>80</i>&nbsp;        public ViewHolder(@NonNull View itemView) {</b>
+<b class="nc"><i>81</i>&nbsp;            super(itemView);</b>
+<i>82</i>&nbsp;        }
+<i>83</i>&nbsp;    }
+<b class="nc"><i>84</i>&nbsp;    public class SenderViewHolder extends RecyclerView.ViewHolder{</b>
+<i>85</i>&nbsp;        private TextView mMessage;
+<b class="nc"><i>86</i>&nbsp;        public SenderViewHolder(@NonNull View itemView) {</b>
+<b class="nc"><i>87</i>&nbsp;            super(itemView);</b>
+<b class="nc"><i>88</i>&nbsp;            mMessage = itemView.findViewById(R.id.sender_id);</b>
+<i>89</i>&nbsp;        }
+<i>90</i>&nbsp;    }
+<b class="nc"><i>91</i>&nbsp;    public class ReceiverViewHolder extends RecyclerView.ViewHolder{</b>
+<i>92</i>&nbsp;        private TextView mMessage;
+<b class="nc"><i>93</i>&nbsp;        public ReceiverViewHolder(@NonNull View itemView) {</b>
+<b class="nc"><i>94</i>&nbsp;            super(itemView);</b>
+<b class="nc"><i>95</i>&nbsp;            mMessage = itemView.findViewById(R.id.receiver_id);</b>
+<i>96</i>&nbsp;        }
+<i>97</i>&nbsp;    }
+<i>98</i>&nbsp;
+<i>99</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-02-17 00:21</div>
+</div>
+</body>
+</html>

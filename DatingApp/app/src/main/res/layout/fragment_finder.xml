@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".fragment.FinderFragment">
+
+    <FrameLayout
+        android:id="@+id/finderFragmentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toTopOf="@+id/age_range"
+                app:layout_constraintTop_toTopOf="@+id/age_range">
+
+
+                <ImageView
+                    android:id="@+id/background_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/background_one"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteX="2dp"
+                    tools:layout_editor_absoluteY="3dp" />
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="716dp"
+                    android:layout_height="414dp"
+                    android:src="@drawable/profile"
+                    app:civ_border_color="#FF000000"
+                    app:civ_border_width="2dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.504"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteY="16dp" />
+
+                <TextView
+                    android:id="@+id/nameAgeLocationX"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="136dp"
+                    android:layout_marginTop="12dp"
+                    android:ems="10"
+                    android:hint="nameAgeLocation"
+                    android:shadowColor="@color/purple_700"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/personalityTypeAgePreferenceX"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="136dp"
+                    android:layout_marginTop="12dp"
+                    android:text="personalityTypeAgePreference"
+                    android:textColor="@color/colorAccent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/nameAgeLocationX" />
+
+                <TextView
+                    android:id="@+id/summaryX"
+                    android:layout_width="197dp"
+                    android:layout_height="65dp"
+                    android:layout_marginStart="136dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="100dp"
+                    android:text="summary"
+                    android:textColor="@color/colorAccent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/personalityTypeAgePreferenceX" />
+
+                <ImageButton
+                    android:id="@+id/rejectBtn"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_horizontal"
+
+                    android:layout_marginStart="60dp"
+                    android:layout_marginTop="50dp"
+                    android:background="@drawable/dislike2"
+                    app:layout_constraintEnd_toStartOf="@+id/acceptBtn"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/summaryX"
+                    app:layout_marginTopPercent="40%"
+                    app:layout_widthPercent="50%"
+                    tools:ignore="MissingConstraints" />
+
+                <ImageButton
+                    android:id="@+id/acceptBtn"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+
+                    android:layout_marginTop="50dp"
+                    android:layout_marginEnd="60dp"
+                    android:background="@drawable/like2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/summaryX" />
+
+                <ImageButton
+                    android:id="@+id/chat_btn_id"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginEnd="60dp"
+                    android:src="@drawable/chat_7"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/acceptBtn"
+                    app:layout_constraintHorizontal_bias="0.864"
+                    app:layout_constraintStart_toEndOf="@+id/rejectBtn"
+                    app:layout_constraintTop_toBottomOf="@+id/summaryX"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/compatiblity"
+                    android:layout_width="123dp"
+                    android:layout_height="89dp"
+                    android:layout_marginStart="32dp"
+                    android:text="79% Personality match"
+                    android:textColor="@color/Lime"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/summaryX"
+                    app:layout_constraintEnd_toStartOf="@+id/personalityTypeAgePreferenceX"
+                    app:layout_constraintHorizontal_bias="0.842"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/nameAgeLocationX"
+                    app:layout_constraintVertical_bias="1.0" />
+
+                <TextView
+                    android:id="@+id/distanceView"
+                    android:layout_width="100dp"
+                    android:layout_height="24dp"
+                    android:text="_ km"
+                    android:textColor="@color/quantum_yellow"
+                    app:layout_constraintBottom_toTopOf="@+id/compatiblity"
+                    app:layout_constraintEnd_toStartOf="@+id/personalityTypeAgePreferenceX"
+                    app:layout_constraintHorizontal_bias="0.444"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/nameAgeLocationX"
+                    app:layout_constraintVertical_bias="1.0" />
+
+                <ImageButton
+                    android:id="@+id/imageButton5"
+                    android:layout_width="72dp"
+                    android:layout_height="67dp"
+                    android:layout_marginBottom="24dp"
+                    android:src="@drawable/location5"
+                    app:layout_constraintBottom_toBottomOf="@+id/distanceView"
+                    app:layout_constraintEnd_toStartOf="@+id/nameAgeLocationX"
+                    app:layout_constraintHorizontal_bias="0.453"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

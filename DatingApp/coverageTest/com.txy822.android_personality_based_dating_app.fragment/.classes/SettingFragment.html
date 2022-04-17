@@ -1,0 +1,318 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: SettingFragment</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.txy822.android_personality_based_dating_app.fragment</a> ]
+</div>
+
+<h1>Coverage Summary for Class: SettingFragment (com.txy822.android_personality_based_dating_app.fragment)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">SettingFragment</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 20)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">SettingFragment$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 3)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">SettingFragment$2</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 4)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">SettingFragment$3</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 3)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">SettingFragment$4</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 3)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">SettingFragment$5</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 3)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 13)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 36)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.txy822.android_personality_based_dating_app.fragment;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import android.content.Intent;
+<i>4</i>&nbsp;import android.net.Uri;
+<i>5</i>&nbsp;import android.os.Bundle;
+<i>6</i>&nbsp;
+<i>7</i>&nbsp;import androidx.annotation.NonNull;
+<i>8</i>&nbsp;import androidx.fragment.app.Fragment;
+<i>9</i>&nbsp;
+<i>10</i>&nbsp;import android.util.Log;
+<i>11</i>&nbsp;import android.view.LayoutInflater;
+<i>12</i>&nbsp;import android.view.View;
+<i>13</i>&nbsp;import android.view.ViewGroup;
+<i>14</i>&nbsp;import android.widget.Button;
+<i>15</i>&nbsp;import android.widget.EditText;
+<i>16</i>&nbsp;import android.widget.ImageView;
+<i>17</i>&nbsp;
+<i>18</i>&nbsp;import com.google.android.gms.tasks.OnCompleteListener;
+<i>19</i>&nbsp;import com.google.android.gms.tasks.Task;
+<i>20</i>&nbsp;import com.google.firebase.auth.FirebaseAuth;
+<i>21</i>&nbsp;import com.google.firebase.auth.FirebaseUser;
+<i>22</i>&nbsp;import com.google.firebase.database.DatabaseReference;
+<i>23</i>&nbsp;import com.google.firebase.firestore.FirebaseFirestore;
+<i>24</i>&nbsp;import com.google.firebase.storage.FirebaseStorage;
+<i>25</i>&nbsp;import com.google.firebase.storage.StorageReference;
+<i>26</i>&nbsp;import com.txy822.android_personality_based_dating_app.Home;
+<i>27</i>&nbsp;import com.txy822.android_personality_based_dating_app.Main;
+<i>28</i>&nbsp;import com.txy822.android_personality_based_dating_app.R;
+<i>29</i>&nbsp;import com.txy822.android_personality_based_dating_app.SignUp;
+<i>30</i>&nbsp;import com.txy822.android_personality_based_dating_app.UpdateLoginDetail;
+<i>31</i>&nbsp;
+<i>32</i>&nbsp;import java.util.Calendar;
+<i>33</i>&nbsp;
+<i>34</i>&nbsp;/**
+<i>35</i>&nbsp; * SettingFragment class for user preferences and logouts
+<i>36</i>&nbsp; */
+<b class="nc"><i>37</i>&nbsp;public class SettingFragment extends Fragment {</b>
+<i>38</i>&nbsp;
+<b class="nc"><i>39</i>&nbsp;    private final String TAG=&quot;&quot;;</b>
+<b class="nc"><i>40</i>&nbsp;    final Calendar myCalendar= Calendar.getInstance();</b>
+<i>41</i>&nbsp;
+<i>42</i>&nbsp;//    private TextView sample;
+<i>43</i>&nbsp;    private Button save_profile;
+<i>44</i>&nbsp;    private  Button cancel;
+<b class="nc"><i>45</i>&nbsp;    private Uri url=null;</b>
+<i>46</i>&nbsp;    private FirebaseAuth mAuth;
+<i>47</i>&nbsp;    private FirebaseFirestore mStore;
+<i>48</i>&nbsp;    //    private FirebaseStorage mStorage;
+<i>49</i>&nbsp;    private StorageReference mStorage;
+<i>50</i>&nbsp;
+<i>51</i>&nbsp;
+<i>52</i>&nbsp;
+<i>53</i>&nbsp;    private DatabaseReference dbRef;
+<i>54</i>&nbsp;    private Button mUpdate;
+<i>55</i>&nbsp;
+<i>56</i>&nbsp;    private Button logout;
+<i>57</i>&nbsp;    private Button deleteAccount;
+<i>58</i>&nbsp;    private Button updateLogin;
+<i>59</i>&nbsp;
+<i>60</i>&nbsp;    /**
+<i>61</i>&nbsp;     * Creates setting view
+<i>62</i>&nbsp;     * @param inflater LayoutInflater inflater
+<i>63</i>&nbsp;     * @param container ViewGroup container
+<i>64</i>&nbsp;     * @param savedInstanceState Bundle savedInstanceState
+<i>65</i>&nbsp;     * @return View
+<i>66</i>&nbsp;     */
+<i>67</i>&nbsp;    @Override
+<i>68</i>&nbsp;    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+<i>69</i>&nbsp;
+<i>70</i>&nbsp;                             Bundle savedInstanceState) {
+<i>71</i>&nbsp;        // Inflate the layout for this fragment
+<b class="nc"><i>72</i>&nbsp;        View view =inflater.inflate(R.layout.fragment_setting, container, false);</b>
+<i>73</i>&nbsp;
+<i>74</i>&nbsp;
+<i>75</i>&nbsp;
+<b class="nc"><i>76</i>&nbsp;        mAuth=FirebaseAuth.getInstance();</b>
+<b class="nc"><i>77</i>&nbsp;        mStore=FirebaseFirestore.getInstance();</b>
+<i>78</i>&nbsp;//        mStorage=FirebaseStorage.getInstance();
+<b class="nc"><i>79</i>&nbsp;        mStorage= FirebaseStorage.getInstance().getReference();</b>
+<i>80</i>&nbsp;
+<i>81</i>&nbsp;
+<b class="nc"><i>82</i>&nbsp;        logout=view.findViewById(R.id.logout);</b>
+<b class="nc"><i>83</i>&nbsp;        logout.setOnClickListener(new View.OnClickListener() {</b>
+<i>84</i>&nbsp;            @Override
+<i>85</i>&nbsp;            public void onClick(View v) {
+<b class="nc"><i>86</i>&nbsp;                FirebaseAuth.getInstance().signOut();</b>
+<b class="nc"><i>87</i>&nbsp;                startActivity(new Intent(getContext(), Main.class));</b>
+<i>88</i>&nbsp;            }
+<i>89</i>&nbsp;        });
+<b class="nc"><i>90</i>&nbsp;        deleteAccount=view.findViewById(R.id.delete_account_btn);</b>
+<b class="nc"><i>91</i>&nbsp;        deleteAccount.setOnClickListener(new View.OnClickListener() {</b>
+<i>92</i>&nbsp;            @Override
+<i>93</i>&nbsp;            public void onClick(View v) {
+<b class="nc"><i>94</i>&nbsp;                deleteUser();</b>
+<b class="nc"><i>95</i>&nbsp;                Intent intent = new Intent(getContext(), Main.class);</b>
+<b class="nc"><i>96</i>&nbsp;                startActivity(intent);</b>
+<i>97</i>&nbsp;            }
+<i>98</i>&nbsp;        });
+<b class="nc"><i>99</i>&nbsp;        updateLogin=view.findViewById(R.id.update_login_btn);</b>
+<b class="nc"><i>100</i>&nbsp;        updateLogin.setOnClickListener(new View.OnClickListener() {</b>
+<i>101</i>&nbsp;            @Override
+<i>102</i>&nbsp;            public void onClick(View v) {
+<b class="nc"><i>103</i>&nbsp;                Intent intent = new Intent(getContext(), UpdateLoginDetail.class);</b>
+<b class="nc"><i>104</i>&nbsp;                startActivity(intent);</b>
+<i>105</i>&nbsp;            }
+<i>106</i>&nbsp;        });
+<b class="nc"><i>107</i>&nbsp;        mUpdate=view.findViewById(R.id.update);</b>
+<b class="nc"><i>108</i>&nbsp;        mUpdate.setOnClickListener(new View.OnClickListener() {</b>
+<i>109</i>&nbsp;            @Override
+<i>110</i>&nbsp;            public void onClick(View v) {
+<b class="nc"><i>111</i>&nbsp;                Intent intent = new Intent(getContext(), Home.class);</b>
+<b class="nc"><i>112</i>&nbsp;                startActivity(intent);</b>
+<i>113</i>&nbsp;            }
+<i>114</i>&nbsp;        });
+<i>115</i>&nbsp;
+<b class="nc"><i>116</i>&nbsp;        return view;</b>
+<i>117</i>&nbsp;    }
+<i>118</i>&nbsp;    public void deleteUser() {
+<i>119</i>&nbsp;        // [START delete_user]
+<b class="nc"><i>120</i>&nbsp;        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();</b>
+<i>121</i>&nbsp;
+<b class="nc"><i>122</i>&nbsp;        user.delete()</b>
+<b class="nc"><i>123</i>&nbsp;                .addOnCompleteListener(new OnCompleteListener&lt;Void&gt;() {</b>
+<i>124</i>&nbsp;                    @Override
+<i>125</i>&nbsp;                    public void onComplete(@NonNull Task&lt;Void&gt; task) {
+<b class="nc"><i>126</i>&nbsp;                        if (task.isSuccessful()) {</b>
+<b class="nc"><i>127</i>&nbsp;                            Log.d(TAG, &quot;User account deleted.&quot;);</b>
+<i>128</i>&nbsp;                        }
+<i>129</i>&nbsp;                    }
+<i>130</i>&nbsp;                });
+<i>131</i>&nbsp;        // [END delete_user]
+<i>132</i>&nbsp;    }
+<i>133</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-02-17 00:21</div>
+</div>
+</body>
+</html>

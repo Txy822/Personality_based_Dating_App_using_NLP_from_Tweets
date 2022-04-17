@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".fragment.SettingFragment">
+
+    <FrameLayout
+        android:id="@+id/settingFragmentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintEnd_toEndOf="@+id/logout_view_id"
+                app:layout_constraintStart_toEndOf="@+id/logout_view_id"
+                app:layout_constraintTop_toTopOf="@+id/age_range">
+
+
+                <ImageView
+                    android:id="@+id/background_img"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/background_one"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    tools:ignore="MissingConstraints" />
+
+                <Button
+                    android:id="@+id/logout"
+                    android:layout_width="162dp"
+                    android:layout_height="62dp"
+                    android:layout_marginTop="191dp"
+                    android:layout_marginEnd="21dp"
+                    android:layout_marginBottom="37dp"
+                    android:onClick="logout"
+                    android:text="Logout"
+                    android:textColor="@color/white"
+                    app:backgroundTint="@color/Gray"
+                    app:layout_constraintBottom_toTopOf="@+id/update_login_btn"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/logout_view_id"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/logout_view_id"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="51dp"
+                    android:layout_marginTop="197dp"
+                    android:layout_marginEnd="50dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="Logout"
+                    android:textColor="@color/windowBackground"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toTopOf="@+id/update_login"
+                    app:layout_constraintEnd_toStartOf="@+id/logout"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/Setting_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="82dp"
+                    android:layout_marginEnd="1dp"
+                    android:layout_marginBottom="263dp"
+                    android:text="Setting"
+                    android:textColor="@color/cardview_light_background"
+                    android:textSize="24sp"
+                    app:layout_constraintBottom_toTopOf="@+id/delete_account_btn"
+                    app:layout_constraintEnd_toStartOf="@+id/logout"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/update"
+                    android:layout_width="132dp"
+                    android:layout_height="51dp"
+                    android:layout_marginBottom="177dp"
+                    android:text="Update"
+                    app:backgroundTint="@color/Gray"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/delete_account_btn" />
+
+                <TextView
+                    android:id="@+id/update_login"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="51dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="Update Login"
+                    android:textColor="@color/cardview_light_background"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toTopOf="@+id/delete_account"
+                    app:layout_constraintEnd_toStartOf="@+id/update_login_btn"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/logout_view_id"
+                    tools:ignore="MissingConstraints" />
+
+                <Button
+                    android:id="@+id/update_login_btn"
+                    android:layout_width="161dp"
+                    android:layout_height="56dp"
+                    android:layout_marginEnd="21dp"
+                    android:layout_marginBottom="37dp"
+                    android:onClick="updateLoginDetain"
+                    android:text="update Login"
+                    app:backgroundTint="@color/Gray"
+                    app:layout_constraintBottom_toTopOf="@+id/delete_account_btn"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/update_login"
+                    app:layout_constraintTop_toBottomOf="@+id/logout"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/delete_account"
+                    android:layout_width="150dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="51dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginBottom="340dp"
+                    android:text="Delete Account"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/delete_account_btn"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/update_login"
+                    tools:ignore="MissingConstraints" />
+
+                <Button
+                    android:id="@+id/delete_account_btn"
+                    android:layout_width="161dp"
+                    android:layout_height="54dp"
+                    android:layout_marginEnd="21dp"
+                    android:layout_marginBottom="392dp"
+                    android:text="Delete"
+                    app:backgroundTint="@color/Gray"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/delete_account"
+                    app:layout_constraintTop_toBottomOf="@+id/Setting_id"
+                    tools:ignore="MissingConstraints" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

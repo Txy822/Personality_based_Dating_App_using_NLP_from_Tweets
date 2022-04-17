@@ -1,0 +1,248 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: CheckPersonalityFragment</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.txy822.android_personality_based_dating_app.fragment</a> ]
+</div>
+
+<h1>Coverage Summary for Class: CheckPersonalityFragment (com.txy822.android_personality_based_dating_app.fragment)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">CheckPersonalityFragment</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 11)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 38)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">CheckPersonalityFragment$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 13)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 40)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.txy822.android_personality_based_dating_app.fragment;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import android.os.Bundle;
+<i>4</i>&nbsp;import android.os.Handler;
+<i>5</i>&nbsp;import android.text.method.ScrollingMovementMethod;
+<i>6</i>&nbsp;import android.util.Log;
+<i>7</i>&nbsp;import android.view.LayoutInflater;
+<i>8</i>&nbsp;import android.view.View;
+<i>9</i>&nbsp;import android.view.ViewGroup;
+<i>10</i>&nbsp;import android.widget.Button;
+<i>11</i>&nbsp;import android.widget.EditText;
+<i>12</i>&nbsp;import android.widget.TextView;
+<i>13</i>&nbsp;
+<i>14</i>&nbsp;import androidx.fragment.app.Fragment;
+<i>15</i>&nbsp;
+<i>16</i>&nbsp;import com.txy822.android_personality_based_dating_app.R;
+<i>17</i>&nbsp;import com.txy822.android_personality_based_dating_app.model.W2vecClassifier;
+<i>18</i>&nbsp;import com.txy822.android_personality_based_dating_app.model.Result;
+<i>19</i>&nbsp;
+<i>20</i>&nbsp;import java.util.ArrayList;
+<i>21</i>&nbsp;import java.util.List;
+<i>22</i>&nbsp;
+<b class="nc"><i>23</i>&nbsp;public class CheckPersonalityFragment extends Fragment {</b>
+<i>24</i>&nbsp;    private static final String TAG = &quot;TextClassificationDemo&quot;;
+<i>25</i>&nbsp;
+<i>26</i>&nbsp;    private Classifier client;
+<i>27</i>&nbsp;
+<i>28</i>&nbsp;    private TextView predictions;
+<i>29</i>&nbsp;    private TextView InputText;
+<i>30</i>&nbsp;    private TextView textView;
+<i>31</i>&nbsp;    private TextView result_text_view;
+<i>32</i>&nbsp;    private EditText inputEditText;
+<i>33</i>&nbsp;    private Handler handler;
+<i>34</i>&nbsp;
+<i>35</i>&nbsp;
+<i>36</i>&nbsp;    @Override
+<i>37</i>&nbsp;    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+<i>38</i>&nbsp;                             Bundle savedInstanceState) {
+<i>39</i>&nbsp;        // Inflate the layout for this fragment
+<b class="nc"><i>40</i>&nbsp;        View view=inflater.inflate(R.layout.fragment_check_personality, container, false);</b>
+<b class="nc"><i>41</i>&nbsp;        Log.v(TAG, &quot;onCreate&quot;);</b>
+<i>42</i>&nbsp;
+<b class="nc"><i>43</i>&nbsp;        client = new Classifier(getContext());</b>
+<i>44</i>&nbsp;
+<b class="nc"><i>45</i>&nbsp;        handler = new Handler();</b>
+<b class="nc"><i>46</i>&nbsp;        inputEditText = view.findViewById(R.id.input_text);</b>
+<b class="nc"><i>47</i>&nbsp;        textView = view.findViewById(R.id.textView);</b>
+<b class="nc"><i>48</i>&nbsp;        result_text_view=view.findViewById(R.id.personality_result_view);</b>
+<b class="nc"><i>49</i>&nbsp;        result_text_view.setMovementMethod(new ScrollingMovementMethod());</b>
+<i>50</i>&nbsp;//        predictions = view.findViewById(R.id.predictions);
+<b class="nc"><i>51</i>&nbsp;        Button classifyButton = view.findViewById(R.id.cancel_personality_checker_page);</b>
+<i>52</i>&nbsp;//
+<i>53</i>&nbsp;//        Bundle bundle=this.getArguments();
+<i>54</i>&nbsp;//        String data_string=getArguments().getString(&quot;key&quot;);
+<i>55</i>&nbsp;//        Log.i(&quot;Tag tes&quot;,data_string);
+<i>56</i>&nbsp;
+<i>57</i>&nbsp;
+<b class="nc"><i>58</i>&nbsp;        classifyButton.setOnClickListener(new View.OnClickListener() {</b>
+<i>59</i>&nbsp;            @Override
+<i>60</i>&nbsp;            public void onClick(View v) {
+<b class="nc"><i>61</i>&nbsp;                classify(inputEditText.getText().toString());</b>
+<i>62</i>&nbsp;//                classify(data_string);
+<i>63</i>&nbsp;            }
+<i>64</i>&nbsp;        });
+<i>65</i>&nbsp;
+<i>66</i>&nbsp;
+<b class="nc"><i>67</i>&nbsp;        return view;</b>
+<i>68</i>&nbsp;    }
+<i>69</i>&nbsp;    @Override
+<i>70</i>&nbsp;    public void onStart (){
+<b class="nc"><i>71</i>&nbsp;        super.onStart();</b>
+<b class="nc"><i>72</i>&nbsp;        Log.v(TAG, &quot;onStart&quot;);</b>
+<b class="nc"><i>73</i>&nbsp;        handler.post(</b>
+<i>74</i>&nbsp;                () -&gt; {
+<b class="nc"><i>75</i>&nbsp;                    client.load();</b>
+<i>76</i>&nbsp;                });
+<i>77</i>&nbsp;
+<i>78</i>&nbsp;    }
+<i>79</i>&nbsp;
+<i>80</i>&nbsp;    /**
+<i>81</i>&nbsp;     * Called when the fragment is no longer in use.  This is called
+<i>82</i>&nbsp;     * after {@link #onStop()} and before {@link #onDetach()}.
+<i>83</i>&nbsp;     */
+<i>84</i>&nbsp;    @Override
+<i>85</i>&nbsp;    public void onDestroy() {
+<b class="nc"><i>86</i>&nbsp;        super.onDestroy();</b>
+<i>87</i>&nbsp;    }
+<i>88</i>&nbsp;
+<i>89</i>&nbsp;    public void onStop (){
+<b class="nc"><i>90</i>&nbsp;        super.onStop();</b>
+<b class="nc"><i>91</i>&nbsp;        Log.v(TAG, &quot;onStop&quot;);</b>
+<b class="nc"><i>92</i>&nbsp;        handler.post(</b>
+<i>93</i>&nbsp;                () -&gt; {
+<b class="nc"><i>94</i>&nbsp;                    client.unload();</b>
+<i>95</i>&nbsp;                });
+<i>96</i>&nbsp;
+<i>97</i>&nbsp;    }
+<i>98</i>&nbsp;    /** Send input text to TextClassificationClient and get the classify messages. */
+<i>99</i>&nbsp;    private void classify(final String text) {
+<b class="nc"><i>100</i>&nbsp;        handler.post(</b>
+<i>101</i>&nbsp;                () -&gt; {
+<i>102</i>&nbsp;                    // Run text classification with TF Lite.
+<b class="nc"><i>103</i>&nbsp;                    List&lt;Result&gt; results = client.classify(text);</b>
+<i>104</i>&nbsp;
+<i>105</i>&nbsp;                    // Show classification result on screen
+<b class="nc"><i>106</i>&nbsp;                    showResult(text, results);</b>
+<i>107</i>&nbsp;                });
+<i>108</i>&nbsp;    }
+<i>109</i>&nbsp;    /** Show classification result on the screen. */
+<i>110</i>&nbsp;    private void showResult(final String inputText, final List&lt;Result&gt; results) {
+<i>111</i>&nbsp;        // Run on UI thread as we&#39;ll updating our app UI
+<b class="nc"><i>112</i>&nbsp;        getActivity().runOnUiThread(</b>
+<i>113</i>&nbsp;                () -&gt; {
+<b class="nc"><i>114</i>&nbsp;                    ArrayList&lt;String&gt; labels = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>115</i>&nbsp;                    ArrayList&lt;String&gt; BarLabel = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>116</i>&nbsp;                    ArrayList&lt;Float&gt; probability = new ArrayList&lt;&gt;();</b>
+<i>117</i>&nbsp;//                    ArrayList&lt;BarEntry&gt; barEntries = new ArrayList&lt;&gt;();
+<i>118</i>&nbsp;
+<b class="nc"><i>119</i>&nbsp;                    String textToShow = &quot;Input: &quot; + inputText + &quot;\nOutput:\n&quot;;</b>
+<b class="nc"><i>120</i>&nbsp;                    for (int i = 0; i &lt; results.size(); i++) {</b>
+<b class="nc"><i>121</i>&nbsp;                        Result result = results.get(i);</b>
+<b class="nc"><i>122</i>&nbsp;                        labels.add(result.getTitle());   // Extract labels</b>
+<b class="nc"><i>123</i>&nbsp;                        probability.add(result.getConfidence());  // Extract confidence</b>
+<i>124</i>&nbsp;                    }
+<i>125</i>&nbsp;                    // PREPARING THE ARRAY LIST OF BAR ENTRIES
+<b class="nc"><i>126</i>&nbsp;                    String s=&quot;&quot;;</b>
+<i>127</i>&nbsp;
+<b class="nc"><i>128</i>&nbsp;                    for(int i=0; i&lt;probability.size(); i++)</b>
+<i>129</i>&nbsp;                    {
+<b class="nc"><i>130</i>&nbsp;                        s=s+labels.get(i)+&quot;=&quot;+probability.get(i)*100+&quot;\n&quot;;</b>
+<i>131</i>&nbsp;                    }
+<b class="nc"><i>132</i>&nbsp;                    result_text_view.setText(s);</b>
+<i>133</i>&nbsp;
+<i>134</i>&nbsp;                    // Clear the input text.
+<b class="nc"><i>135</i>&nbsp;                    inputEditText.getText().clear();</b>
+<i>136</i>&nbsp;
+<i>137</i>&nbsp;                });
+<i>138</i>&nbsp;    }
+<i>139</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-02-17 00:21</div>
+</div>
+</body>
+</html>

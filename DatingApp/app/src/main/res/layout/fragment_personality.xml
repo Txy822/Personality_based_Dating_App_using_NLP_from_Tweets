@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".fragment.PersonalityFragment">
+
+    <FrameLayout
+        android:id="@+id/personality_fragment_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <ImageView
+                    android:id="@+id/background_img"
+                    android:layout_width="699dp"
+                    android:layout_height="1152dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/background_one"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.453"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="1.0"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/fetch_some_tweets_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginEnd="28dp"
+                    android:layout_marginBottom="116dp"
+
+                    android:maxLength="100"
+                    android:textColor="@color/colorAccent"
+                    app:layout_constraintBottom_toTopOf="@+id/personality_classification_result_id"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.378"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view_some_tweets" />
+
+
+                <TextView
+                    android:id="@+id/introOfPage"
+                    android:layout_width="352dp"
+                    android:layout_height="69dp"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginEnd="208dp"
+                    android:layout_marginBottom="130dp"
+                    android:text="Enter your twitter username and check personality below"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toTopOf="@+id/taketest"
+                    app:layout_constraintEnd_toEndOf="@+id/background_img"
+                    app:layout_constraintHorizontal_bias="0.333"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/check_personality"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="152dp"
+                    android:layout_marginEnd="288dp"
+                    android:text="Check personality"
+                    android:textColor="@color/white"
+                    app:backgroundTint="@color/Gray"
+                    app:layout_constraintEnd_toEndOf="@+id/background_img"
+                    app:layout_constraintHorizontal_bias="0.4"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/personality_classification_result_id"
+                    app:layout_marginTopPercent="40%"
+                    app:layout_widthPercent="50%"
+                    tools:ignore="MissingConstraints" />
+
+                <EditText
+                    android:id="@+id/twitter_screen_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/enter_twitter_username"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/common_google_signin_btn_text_dark_pressed"
+                    android:textColorHint="@color/white"
+                    app:layout_constraintBottom_toTopOf="@+id/view_some_tweets"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.148"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/introOfPage" />
+
+                <Button
+                    android:id="@+id/view_some_tweets"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="Enter"
+                    android:textColor="@color/white"
+                    app:backgroundTint="@color/Gray"
+                    app:layout_constraintBottom_toTopOf="@+id/fetch_some_tweets_id"
+                    app:layout_constraintStart_toStartOf="@+id/twitter_screen_name"
+                    app:layout_constraintTop_toBottomOf="@+id/twitter_screen_name"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/personality_classification_result_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="276dp"
+
+                    android:textColor="@color/design_default_color_background"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toTopOf="@+id/check_personality"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.793"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/fetch_some_tweets_id" />
+
+                <TextView
+                    android:id="@+id/taketest"
+                    android:layout_width="332dp"
+                    android:layout_height="38dp"
+                    android:layout_marginBottom="410dp"
+                    android:clickable="true"
+                    android:text="@string/hyperlink"
+                    android:textColor="@color/windowBackground"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.202"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/introOfPage"
+                    app:layout_constraintVertical_bias="1.0" />
+
+                <TextView
+                    android:id="@+id/result_label_text"
+                    android:layout_width="127dp"
+                    android:layout_height="35dp"
+                    android:textColor="@color/design_default_color_on_primary"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toTopOf="@+id/personality_classification_result_id"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.908"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/introOfPage"
+                    app:layout_constraintVertical_bias="0.935" />
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="259dp"
+                    android:layout_height="35dp"
+                    android:text="Check Your Personality"
+                    android:textColor="?android:attr/textColorHighlight"
+                    android:textSize="24sp"
+                    app:layout_constraintBottom_toTopOf="@+id/introOfPage"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.197"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.323" />
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="83dp"
+                    android:layout_height="65dp"
+                    android:src="?android:attr/fingerprintAuthDrawable"
+                    app:layout_constraintBottom_toTopOf="@+id/introOfPage"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.333"
+                    app:layout_constraintStart_toEndOf="@+id/textView8"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.31" />
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@android:drawable/btn_star_big_on"
+                    app:layout_constraintBottom_toTopOf="@+id/introOfPage"
+                    app:layout_constraintEnd_toStartOf="@+id/imageView4"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="108dp"
+                    android:src="@android:drawable/star_big_on"
+                    app:layout_constraintBottom_toTopOf="@+id/introOfPage"
+                    app:layout_constraintEnd_toStartOf="@+id/imageView2"
+                    app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@android:drawable/btn_star_big_on"
+                    app:layout_constraintBottom_toTopOf="@+id/introOfPage"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.401"
+                    app:layout_constraintStart_toEndOf="@+id/imageView4"
+                    app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Login">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:id="@+id/background_img"
+                android:layout_width="414dp"
+                android:layout_height="778dp"
+                android:layout_marginStart="1dp"
+                android:layout_marginEnd="1dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/background_one"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.6"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                tools:ignore="MissingConstraints" />
+
+            <Button
+                android:id="@+id/login_btn"
+                android:layout_width="93dp"
+                android:layout_height="53dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="62dp"
+                android:layout_marginEnd="93dp"
+                android:layout_marginBottom="214dp"
+                android:onClick="login"
+                android:text="@string/login"
+                android:textColor="@color/white"
+                app:backgroundTint="@color/Gray"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/login_cancel_btn"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/create_account_btn"
+                app:layout_marginTopPercent="40%"
+                app:layout_widthPercent="50%"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/welcome_text"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="62dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginEnd="62dp"
+                android:layout_marginBottom="294dp"
+                android:ellipsize="middle"
+                android:gravity="center"
+                android:text="@string/welcome"
+                android:textColor="@color/white"
+                android:textSize="36sp"
+                app:layout_constraintBottom_toTopOf="@+id/forgotPassword_btn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints" />
+
+            <EditText
+                android:id="@+id/enterPassword"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="60dp"
+                android:layout_marginEnd="60dp"
+                android:layout_marginBottom="12dp"
+                android:ems="10"
+                android:foregroundGravity="center_vertical|center|center_horizontal"
+                android:gravity="center|center_horizontal|center_vertical"
+                android:hint="Enter Password"
+                android:imeOptions="actionDone"
+                android:inputType="textPassword"
+                android:shadowColor="@color/purple_700"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                app:layout_constraintBottom_toTopOf="@+id/create_account_btn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/enterEmail"
+                tools:ignore="MissingConstraints" />
+
+            <Button
+                android:id="@+id/create_account_btn"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="192dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="121dp"
+                android:foregroundGravity="center_vertical|center|center_horizontal"
+                android:gravity="center_horizontal|center_vertical|fill_vertical"
+                android:onClick="createAccount"
+                android:text="@string/create_account"
+                android:textColor="@color/Aqua"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toTopOf="@+id/login_btn"
+                app:layout_constraintEnd_toEndOf="@+id/enterPassword"
+                app:layout_constraintTop_toBottomOf="@+id/enterPassword"
+                tools:ignore="MissingConstraints,UnknownId" />
+
+            <Button
+                android:id="@+id/login_cancel_btn"
+                android:layout_width="93dp"
+                android:layout_height="53dp"
+                android:layout_marginEnd="62dp"
+                android:layout_marginBottom="214dp"
+                android:onClick="cancel"
+                android:text="@string/cancel"
+                android:textColor="@color/white"
+                app:backgroundTint="@color/Gray"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/login_btn"
+                tools:ignore="MissingConstraints" />
+
+            <EditText
+                android:id="@+id/enterEmail"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="25dp"
+                android:ems="10"
+                android:foregroundGravity="center_vertical|center_horizontal"
+                android:gravity="center_horizontal|center_vertical"
+                android:hint="Enter Email"
+                android:inputType="textPersonName"
+                android:textColor="@color/white"
+                android:textColorHighlight="@color/white"
+                android:textColorHint="@color/common_google_signin_btn_text_dark_pressed"
+                app:layout_constraintBottom_toTopOf="@+id/enterPassword"
+                app:layout_constraintEnd_toEndOf="@+id/enterPassword"
+                app:layout_constraintStart_toStartOf="@+id/enterPassword"
+                app:layout_constraintTop_toBottomOf="@+id/welcome_text" />
+
+            <Button
+                android:id="@+id/forgotPassword_btn"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="192dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="2dp"
+                android:foregroundGravity="center_vertical|center|center_horizontal"
+                android:gravity="center_horizontal|center_vertical|fill_vertical"
+                android:layout_marginBottom="325dp"
+                android:text="Forgot Password"
+                android:onClick="sendPasswordReset"
+
+                android:textColor="@color/Aqua"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/create_account_btn"
+                app:layout_constraintStart_toStartOf="@+id/create_account_btn"
+                app:layout_constraintTop_toBottomOf="@+id/welcome_text" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

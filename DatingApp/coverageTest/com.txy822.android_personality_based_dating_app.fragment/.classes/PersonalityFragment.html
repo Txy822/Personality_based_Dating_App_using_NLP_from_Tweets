@@ -1,0 +1,515 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: PersonalityFragment</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.txy822.android_personality_based_dating_app.fragment</a> ]
+</div>
+
+<h1>Coverage Summary for Class: PersonalityFragment (com.txy822.android_personality_based_dating_app.fragment)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">PersonalityFragment</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 17)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 73)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">PersonalityFragment$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 7)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">PersonalityFragment$2</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 3)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">PersonalityFragment$2$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 19)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">PersonalityFragment$3</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 3)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">PersonalityFragment$4</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 27)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 107)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.txy822.android_personality_based_dating_app.fragment;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import android.app.Activity;
+<i>4</i>&nbsp;import android.app.AlertDialog;
+<i>5</i>&nbsp;import android.content.DialogInterface;
+<i>6</i>&nbsp;import android.content.Intent;
+<i>7</i>&nbsp;import android.net.Uri;
+<i>8</i>&nbsp;import android.os.Bundle;
+<i>9</i>&nbsp;import android.text.method.LinkMovementMethod;
+<i>10</i>&nbsp;import android.text.method.ScrollingMovementMethod;
+<i>11</i>&nbsp;import android.util.Log;
+<i>12</i>&nbsp;import android.view.LayoutInflater;
+<i>13</i>&nbsp;import android.view.View;
+<i>14</i>&nbsp;import android.view.ViewGroup;
+<i>15</i>&nbsp;import android.widget.Button;
+<i>16</i>&nbsp;import android.widget.EditText;
+<i>17</i>&nbsp;import android.widget.TextView;
+<i>18</i>&nbsp;
+<i>19</i>&nbsp;import androidx.fragment.app.Fragment;
+<i>20</i>&nbsp;
+<i>21</i>&nbsp;import com.txy822.android_personality_based_dating_app.R;
+<i>22</i>&nbsp;
+<i>23</i>&nbsp;import java.util.List;
+<i>24</i>&nbsp;
+<i>25</i>&nbsp;import twitter4j.Paging;
+<i>26</i>&nbsp;import twitter4j.ResponseList;
+<i>27</i>&nbsp;import twitter4j.Status;
+<i>28</i>&nbsp;import twitter4j.Twitter;
+<i>29</i>&nbsp;import twitter4j.TwitterException;
+<i>30</i>&nbsp;import twitter4j.TwitterFactory;
+<i>31</i>&nbsp;import twitter4j.conf.ConfigurationBuilder;
+<i>32</i>&nbsp;
+<i>33</i>&nbsp;import android.os.Handler;
+<i>34</i>&nbsp;
+<i>35</i>&nbsp;import com.txy822.android_personality_based_dating_app.SignUp;
+<i>36</i>&nbsp;import com.txy822.android_personality_based_dating_app.model.W2vecClassifier;
+<i>37</i>&nbsp;import com.txy822.android_personality_based_dating_app.model.Result;
+<i>38</i>&nbsp;
+<i>39</i>&nbsp;import java.util.ArrayList;
+<i>40</i>&nbsp;
+<i>41</i>&nbsp;/**
+<i>42</i>&nbsp; * PersonalityFragment Fetch tweets,load model check personality
+<i>43</i>&nbsp; */
+<b class="nc"><i>44</i>&nbsp;public class PersonalityFragment extends Fragment {</b>
+<i>45</i>&nbsp;
+<i>46</i>&nbsp;
+<i>47</i>&nbsp;    private static final String TAG = &quot;TAG&quot;;
+<i>48</i>&nbsp;//  twitter API authentication keys
+<b class="nc"><i>49</i>&nbsp;    private  String CONSUMER_KEY=&quot;WrGHcGFuDNbRZZ8foEEL452Rw&quot;;</b>
+<b class="nc"><i>50</i>&nbsp;    private  String CONSUMER_SECRET=&quot;f1jnEOIE06JrXsThFzBQnvmAnE3t9g6alZXNsndl3x0jRgga9i&quot;;</b>
+<b class="nc"><i>51</i>&nbsp;    private  String ACCESS_KEY=&quot;1411733567730860032-sYHaXwQssOB3yYRjMO1wzqbKNBlzrW&quot;;</b>
+<b class="nc"><i>52</i>&nbsp;    private  String ACCESS_SECRET=&quot;GYQRsaZFkUAkjDjfvVjycgNwqHlQJ8uRe8QTLWKy7BR21&quot;;</b>
+<i>53</i>&nbsp;
+<i>54</i>&nbsp;    private Button btn_check_personality;
+<i>55</i>&nbsp;    private Button btn_view_some_tweets;
+<i>56</i>&nbsp;
+<b class="nc"><i>57</i>&nbsp;    ResponseList&lt;Status&gt; resList = null;</b>
+<i>58</i>&nbsp;    private  TextView title;
+<i>59</i>&nbsp;
+<i>60</i>&nbsp;    private TextView classification_result;
+<i>61</i>&nbsp;    private EditText user_name_or_screen_name;
+<b class="nc"><i>62</i>&nbsp;    private int numberOfTweets=100; //  number of tweets</b>
+<b class="nc"><i>63</i>&nbsp;    private String screenName=&quot;elonmusk&quot;;</b>
+<i>64</i>&nbsp;
+<i>65</i>&nbsp;    private Classifier client_w2vec;
+<i>66</i>&nbsp;//    private Classifier_bert client_bert;
+<i>67</i>&nbsp;
+<i>68</i>&nbsp;    private TextView fetch_some_tweets;
+<i>69</i>&nbsp;    private Handler handler;
+<i>70</i>&nbsp;
+<i>71</i>&nbsp;
+<i>72</i>&nbsp;    /**
+<i>73</i>&nbsp;     * Creates PersonalityFragment view
+<i>74</i>&nbsp;     * @param inflater LayoutInflater inflater
+<i>75</i>&nbsp;     * @param container ViewGroup container
+<i>76</i>&nbsp;     * @param savedInstanceState ViewGroup container
+<i>77</i>&nbsp;     * @return View
+<i>78</i>&nbsp;     */
+<i>79</i>&nbsp;    @Override
+<i>80</i>&nbsp;    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+<i>81</i>&nbsp;                             Bundle savedInstanceState) {
+<i>82</i>&nbsp;        // Inflate the layout for this fragment
+<b class="nc"><i>83</i>&nbsp;        View view=inflater.inflate(R.layout.fragment_personality, container, false);</b>
+<b class="nc"><i>84</i>&nbsp;        btn_check_personality=view.findViewById(R.id.check_personality);</b>
+<b class="nc"><i>85</i>&nbsp;        btn_view_some_tweets=view.findViewById(R.id.view_some_tweets);</b>
+<i>86</i>&nbsp;
+<b class="nc"><i>87</i>&nbsp;        classification_result=view.findViewById(R.id.personality_classification_result_id);</b>
+<b class="nc"><i>88</i>&nbsp;        classification_result.setMovementMethod(new ScrollingMovementMethod());</b>
+<b class="nc"><i>89</i>&nbsp;        fetch_some_tweets=view.findViewById(R.id.fetch_some_tweets_id);</b>
+<b class="nc"><i>90</i>&nbsp;        fetch_some_tweets.setMovementMethod(new ScrollingMovementMethod());</b>
+<b class="nc"><i>91</i>&nbsp;        title=view.findViewById(R.id.introOfPage);</b>
+<b class="nc"><i>92</i>&nbsp;        user_name_or_screen_name=view.findViewById(R.id.twitter_screen_name);</b>
+<i>93</i>&nbsp;
+<i>94</i>&nbsp;
+<b class="nc"><i>95</i>&nbsp;        client_w2vec = new Classifier(this.getContext());</b>
+<i>96</i>&nbsp;//        client_bert = new Classifier_bert(this.getContext());
+<i>97</i>&nbsp;
+<b class="nc"><i>98</i>&nbsp;        handler = new Handler();</b>
+<i>99</i>&nbsp;        //checks personality using processed tweets
+<b class="nc"><i>100</i>&nbsp;        btn_check_personality.setOnClickListener(new View.OnClickListener() {</b>
+<i>101</i>&nbsp;            @Override
+<i>102</i>&nbsp;            public void onClick(View v) {
+<i>103</i>&nbsp;
+<b class="nc"><i>104</i>&nbsp;                if(resList !=null) {</b>
+<b class="nc"><i>105</i>&nbsp;                    String processed_tweets = preprocess(fetch_some_tweets.getText().toString());</b>
+<i>106</i>&nbsp;
+<b class="nc"><i>107</i>&nbsp;                    classify(processed_tweets);</b>
+<b class="nc"><i>108</i>&nbsp;                }else {</b>
+<b class="nc"><i>109</i>&nbsp;                    String s=&quot;You can&#39;t check for this username&quot;;</b>
+<b class="nc"><i>110</i>&nbsp;                    setText(classification_result,s);</b>
+<i>111</i>&nbsp;                }
+<i>112</i>&nbsp;
+<i>113</i>&nbsp;            }
+<i>114</i>&nbsp;        });
+<i>115</i>&nbsp;        //view some of users recent tweets
+<b class="nc"><i>116</i>&nbsp;        btn_view_some_tweets.setOnClickListener(new View.OnClickListener() {</b>
+<i>117</i>&nbsp;            @Override
+<i>118</i>&nbsp;            public void onClick(View v) {
+<i>119</i>&nbsp;
+<i>120</i>&nbsp;
+<b class="nc"><i>121</i>&nbsp;                Thread thread = new Thread(new Runnable() {</b>
+<i>122</i>&nbsp;
+<i>123</i>&nbsp;                    @Override
+<i>124</i>&nbsp;                    public void run() {
+<i>125</i>&nbsp;
+<i>126</i>&nbsp;                        try {
+<b class="nc"><i>127</i>&nbsp;                            screenName=user_name_or_screen_name.getText().toString();</b>
+<b class="nc"><i>128</i>&nbsp;                            resList = getUserTimeLine(screenName,numberOfTweets);</b>
+<b class="nc"><i>129</i>&nbsp;                        } catch (TwitterException e) {</b>
+<b class="nc"><i>130</i>&nbsp;                            resList=null;</b>
+<b class="nc"><i>131</i>&nbsp;                            String s=&quot;Check your username please!&quot;;</b>
+<i>132</i>&nbsp;//                            e.printStackTrace();
+<i>133</i>&nbsp;//                            Toast.makeText(getContext(),&quot;Error! Check your username!&quot;,Toast.LENGTH_LONG).show();
+<b class="nc"><i>134</i>&nbsp;                            Log.i(TAG,&quot; Check your username please!&quot;);</b>
+<b class="nc"><i>135</i>&nbsp;                            setText(fetch_some_tweets,s);</b>
+<i>136</i>&nbsp;//                            fetch_some_tweets.setText(&quot;Error! Check your username please!&quot;);
+<i>137</i>&nbsp;
+<b class="nc"><i>138</i>&nbsp;                        }</b>
+<b class="nc"><i>139</i>&nbsp;                        if(resList !=null) {</b>
+<b class="nc"><i>140</i>&nbsp;                            String s=&quot;&quot;;</b>
+<b class="nc"><i>141</i>&nbsp;                            for (Status status : resList) {</b>
+<b class="nc"><i>142</i>&nbsp;                                s = s + status.getText();</b>
+<b class="nc"><i>143</i>&nbsp;                            }</b>
+<b class="nc"><i>144</i>&nbsp;                            setText(fetch_some_tweets,s);</b>
+<i>145</i>&nbsp;//                            setText(tweets2,preprocess(s));
+<b class="nc"><i>146</i>&nbsp;                        }else{</b>
+<b class="nc"><i>147</i>&nbsp;                            String s=&quot;Username is incorrect! check your username!&quot;;</b>
+<b class="nc"><i>148</i>&nbsp;                            setText(fetch_some_tweets,s);</b>
+<b class="nc"><i>149</i>&nbsp;                            Log.i(TAG, &quot; check your username!&quot;);</b>
+<i>150</i>&nbsp;                        }
+<i>151</i>&nbsp;                    }
+<i>152</i>&nbsp;                });
+<i>153</i>&nbsp;
+<b class="nc"><i>154</i>&nbsp;                thread.start();</b>
+<i>155</i>&nbsp;
+<i>156</i>&nbsp;            }
+<i>157</i>&nbsp;        });
+<i>158</i>&nbsp;
+<b class="nc"><i>159</i>&nbsp;        TextView linkTextView = view.findViewById(R.id.taketest);</b>
+<i>160</i>&nbsp;
+<b class="nc"><i>161</i>&nbsp;        linkTextView.setOnClickListener(new View.OnClickListener() {</b>
+<i>162</i>&nbsp;            @Override
+<i>163</i>&nbsp;            public void onClick(View v) {
+<b class="nc"><i>164</i>&nbsp;                Intent intent=new Intent(Intent.ACTION_VIEW, Uri.parse(&quot;https://www.truity.com/test/type-finder-personality-test-new&quot;));</b>
+<b class="nc"><i>165</i>&nbsp;                startActivity(Intent.createChooser(intent, &quot;Browse with&quot;));</b>
+<i>166</i>&nbsp;//                moveToNewActivity(linkTextView);
+<i>167</i>&nbsp;
+<i>168</i>&nbsp;            }
+<i>169</i>&nbsp;        });
+<i>170</i>&nbsp;
+<i>171</i>&nbsp;
+<i>172</i>&nbsp;
+<b class="nc"><i>173</i>&nbsp;        return view;</b>
+<i>174</i>&nbsp;    }
+<i>175</i>&nbsp;    private void moveToNewActivity (TextView linkTextView ) {
+<b class="nc"><i>176</i>&nbsp;        Intent i = new Intent(getActivity(), SignUp.class);</b>
+<b class="nc"><i>177</i>&nbsp;        startActivity(i);</b>
+<b class="nc"><i>178</i>&nbsp;        ((Activity) getActivity()).overridePendingTransition(0, 0);</b>
+<b class="nc"><i>179</i>&nbsp;        linkTextView.setMovementMethod(LinkMovementMethod.getInstance());</b>
+<i>180</i>&nbsp;
+<i>181</i>&nbsp;
+<i>182</i>&nbsp;    }
+<i>183</i>&nbsp;
+<i>184</i>&nbsp;    /**
+<i>185</i>&nbsp;     * Gets user time line by screen name
+<i>186</i>&nbsp;     * @param screenName  String username
+<i>187</i>&nbsp;     * @param count count number of recent tweets
+<i>188</i>&nbsp;     * @return  Response list of status
+<i>189</i>&nbsp;     * @throws TwitterException
+<i>190</i>&nbsp;     */
+<i>191</i>&nbsp;    public ResponseList&lt;Status&gt; getUserTimeLine(String screenName,int count) throws TwitterException {
+<i>192</i>&nbsp;
+<b class="nc"><i>193</i>&nbsp;        TwitterFactory twitterFactory = new TwitterFactory(getConfiguration().build());</b>
+<b class="nc"><i>194</i>&nbsp;        Twitter twitter = twitterFactory.getInstance();</b>
+<b class="nc"><i>195</i>&nbsp;        twitter.getAuthorization();</b>
+<i>196</i>&nbsp;
+<b class="nc"><i>197</i>&nbsp;        Long twitterID= twitter.getId();</b>
+<b class="nc"><i>198</i>&nbsp;        Paging paging = new Paging(1, count);</b>
+<i>199</i>&nbsp;
+<b class="nc"><i>200</i>&nbsp;        return twitter.getUserTimeline(screenName, paging);</b>
+<i>201</i>&nbsp;    }
+<i>202</i>&nbsp;
+<i>203</i>&nbsp;    /**
+<i>204</i>&nbsp;     * Configuration builder setup authentication of twitter4j API
+<i>205</i>&nbsp;     * @return  ConfigurationBuilder cb
+<i>206</i>&nbsp;     */
+<i>207</i>&nbsp;    public ConfigurationBuilder getConfiguration() {
+<b class="nc"><i>208</i>&nbsp;        ConfigurationBuilder cb = new ConfigurationBuilder();</b>
+<b class="nc"><i>209</i>&nbsp;        cb.setDebugEnabled(true)</b>
+<b class="nc"><i>210</i>&nbsp;                .setOAuthConsumerKey(CONSUMER_KEY)</b>
+<b class="nc"><i>211</i>&nbsp;                .setOAuthConsumerSecret(CONSUMER_SECRET)</b>
+<b class="nc"><i>212</i>&nbsp;                .setOAuthAccessToken(ACCESS_KEY)</b>
+<b class="nc"><i>213</i>&nbsp;                .setOAuthAccessTokenSecret(ACCESS_SECRET);</b>
+<b class="nc"><i>214</i>&nbsp;        return cb;</b>
+<i>215</i>&nbsp;    }
+<i>216</i>&nbsp;
+<i>217</i>&nbsp;    /**
+<i>218</i>&nbsp;     * Set text value of TextView
+<i>219</i>&nbsp;     * @param text  TextView text
+<i>220</i>&nbsp;     * @param s  String input s
+<i>221</i>&nbsp;     */
+<i>222</i>&nbsp;    private void setText(final TextView text,String s){
+<b class="nc"><i>223</i>&nbsp;        getActivity().runOnUiThread(new Runnable() {</b>
+<i>224</i>&nbsp;            @Override
+<i>225</i>&nbsp;            public void run() {
+<b class="nc"><i>226</i>&nbsp;                text.setText(s);</b>
+<i>227</i>&nbsp;
+<i>228</i>&nbsp;            }
+<i>229</i>&nbsp;        });
+<i>230</i>&nbsp;    }
+<i>231</i>&nbsp;
+<i>232</i>&nbsp;    /**
+<i>233</i>&nbsp;     * preprocess the given text
+<i>234</i>&nbsp;     * @param s String input text
+<i>235</i>&nbsp;     * @return String processed text
+<i>236</i>&nbsp;     */
+<i>237</i>&nbsp;    public String preprocess( String s){
+<i>238</i>&nbsp;
+<b class="nc"><i>239</i>&nbsp;        String preprocessed=&quot;&quot;;</b>
+<i>240</i>&nbsp;            // replace the given string
+<i>241</i>&nbsp;            // with empty string
+<i>242</i>&nbsp;            // except the pattern &quot;[^a-zA-Z0-9]&quot;
+<b class="nc"><i>243</i>&nbsp;        preprocessed=s.replaceAll(&quot;https?://\\S+\\s?&quot;, &quot;&quot;);</b>
+<b class="nc"><i>244</i>&nbsp;        preprocessed = preprocessed.replaceAll(&quot;[^0-9A-Za-z ]&quot;, &quot; &quot;);</b>
+<i>245</i>&nbsp;
+<b class="nc"><i>246</i>&nbsp;        preprocessed.toLowerCase();</b>
+<b class="nc"><i>247</i>&nbsp;        return preprocessed;</b>
+<i>248</i>&nbsp;    }
+<i>249</i>&nbsp;
+<i>250</i>&nbsp;    /**
+<i>251</i>&nbsp;     * Loads the classifier
+<i>252</i>&nbsp;     */
+<i>253</i>&nbsp;    @Override
+<i>254</i>&nbsp;    public void onStart (){
+<b class="nc"><i>255</i>&nbsp;        super.onStart();</b>
+<b class="nc"><i>256</i>&nbsp;        Log.v(TAG, &quot;onStart&quot;);</b>
+<b class="nc"><i>257</i>&nbsp;        handler.post(</b>
+<i>258</i>&nbsp;                () -&gt; {
+<b class="nc"><i>259</i>&nbsp;                    client_w2vec.load();</b>
+<i>260</i>&nbsp;//                    client_bert.load();
+<i>261</i>&nbsp;                });
+<i>262</i>&nbsp;
+<i>263</i>&nbsp;    }
+<i>264</i>&nbsp;
+<i>265</i>&nbsp;    /**
+<i>266</i>&nbsp;     * Called when the fragment is no longer in use.  This is called
+<i>267</i>&nbsp;     *
+<i>268</i>&nbsp;     */
+<i>269</i>&nbsp;    @Override
+<i>270</i>&nbsp;    public void onDestroy() {
+<b class="nc"><i>271</i>&nbsp;        super.onDestroy();</b>
+<i>272</i>&nbsp;    }
+<i>273</i>&nbsp;
+<i>274</i>&nbsp;    public void onStop (){
+<b class="nc"><i>275</i>&nbsp;        super.onStop();</b>
+<b class="nc"><i>276</i>&nbsp;        Log.v(TAG, &quot;onStop&quot;);</b>
+<b class="nc"><i>277</i>&nbsp;        handler.post(</b>
+<i>278</i>&nbsp;                () -&gt; {
+<b class="nc"><i>279</i>&nbsp;                    client_w2vec.unload();</b>
+<i>280</i>&nbsp;//                    client_bert.unload();
+<i>281</i>&nbsp;                });
+<i>282</i>&nbsp;
+<i>283</i>&nbsp;    }
+<i>284</i>&nbsp;    /** Send input text to TextClassificationClient and get the classify messages. */
+<i>285</i>&nbsp;    private void classify(final String text) {
+<b class="nc"><i>286</i>&nbsp;        handler.post(</b>
+<i>287</i>&nbsp;                () -&gt; {
+<i>288</i>&nbsp;                    // Run text classification with TF Lite.
+<b class="nc"><i>289</i>&nbsp;                    List&lt;Result&gt; results = client_w2vec.classify(text);</b>
+<i>290</i>&nbsp;//                    List&lt;Result&gt; results = client_bert.classify(text);
+<i>291</i>&nbsp;
+<i>292</i>&nbsp;                    // Show classification result on screen
+<b class="nc"><i>293</i>&nbsp;                    showResult(text, results);</b>
+<i>294</i>&nbsp;                });
+<i>295</i>&nbsp;    }
+<i>296</i>&nbsp;    /** Show classification result on the screen. */
+<i>297</i>&nbsp;    private void showResult(final String inputText, final List&lt;Result&gt; results) {
+<i>298</i>&nbsp;        // Run on UI thread as we&#39;ll updating our app UI
+<b class="nc"><i>299</i>&nbsp;        getActivity().runOnUiThread(</b>
+<i>300</i>&nbsp;                () -&gt; {
+<b class="nc"><i>301</i>&nbsp;                    ArrayList&lt;String&gt; labels = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>302</i>&nbsp;                    ArrayList&lt;String&gt; BarLabel = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>303</i>&nbsp;                    ArrayList&lt;Float&gt; probability = new ArrayList&lt;&gt;();</b>
+<i>304</i>&nbsp;//                    ArrayList&lt;BarEntry&gt; barEntries = new ArrayList&lt;&gt;();
+<i>305</i>&nbsp;
+<i>306</i>&nbsp;//                    String textToShow = &quot;Input: &quot; + inputText + &quot;\nOutput:\n&quot;;
+<b class="nc"><i>307</i>&nbsp;                    for (int i = 0; i &lt; results.size(); i++) {</b>
+<b class="nc"><i>308</i>&nbsp;                        Result result = results.get(i);</b>
+<b class="nc"><i>309</i>&nbsp;                        labels.add(result.getTitle());   // Extract labels</b>
+<b class="nc"><i>310</i>&nbsp;                        probability.add(result.getConfidence());  // Extract confidence</b>
+<i>311</i>&nbsp;                    }
+<i>312</i>&nbsp;                    // PREPARING THE ARRAY LIST OF BAR ENTRIES
+<b class="nc"><i>313</i>&nbsp;                    String s=&quot;&quot;;</b>
+<i>314</i>&nbsp;
+<b class="nc"><i>315</i>&nbsp;                    for(int i=0; i&lt;probability.size(); i++)</b>
+<i>316</i>&nbsp;                    {
+<b class="nc"><i>317</i>&nbsp;                       Float z=(probability.get(i))*100;</b>
+<b class="nc"><i>318</i>&nbsp;                        int x = (z).intValue();</b>
+<b class="nc"><i>319</i>&nbsp;                        s=s+labels.get(i)+&quot;=&quot;+(x)+&quot;%&quot;+&quot;\n&quot;;</b>
+<i>320</i>&nbsp;                    }
+<b class="nc"><i>321</i>&nbsp;                    classification_result.setText(s);</b>
+<i>322</i>&nbsp;
+<i>323</i>&nbsp;                    // Clear the input text.
+<i>324</i>&nbsp;//                    inputEditText.getText().clear();
+<i>325</i>&nbsp;
+<i>326</i>&nbsp;                });
+<i>327</i>&nbsp;    }
+<i>328</i>&nbsp;
+<i>329</i>&nbsp;
+<i>330</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-02-17 00:21</div>
+</div>
+</body>
+</html>

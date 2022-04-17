@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignUp">
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toStartOf="@+id/cancel_btn"
+        app:layout_constraintStart_toStartOf="@+id/cancel_btn">
+
+        <ImageView
+            android:id="@+id/background_img"
+            android:layout_width="421dp"
+            android:layout_height="816dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/background_one"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/enter_full_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="28dp"
+            android:ems="10"
+            android:gravity="center_horizontal|center_vertical"
+            android:hint="Enter Full Name"
+            android:imeOptions="actionDone"
+            android:inputType="textPersonName"
+            android:textColor="@color/white"
+            android:textColorHint="@color/common_google_signin_btn_text_dark_default"
+            app:layout_constraintBottom_toTopOf="@+id/enterEmail"
+            app:layout_constraintStart_toStartOf="@+id/enterEmail"
+            app:layout_constraintTop_toBottomOf="@+id/welcome_note" />
+
+        <EditText
+            android:id="@+id/enterEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="18dp"
+            android:ems="10"
+            android:gravity="center_horizontal|center_vertical"
+            android:hint="Enter Email"
+            android:imeOptions="actionDone"
+            android:inputType="textPersonName"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/enter_password"
+            app:layout_constraintEnd_toEndOf="@+id/enter_password"
+            app:layout_constraintTop_toBottomOf="@+id/enter_full_name" />
+
+        <EditText
+            android:id="@+id/enter_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="23dp"
+            android:ems="10"
+            android:gravity="center_horizontal|center_vertical"
+            android:hint="Enter Password"
+            android:imeOptions="actionDone"
+            android:inputType="textPassword"
+            android:textColor="@color/windowBackground"
+            android:textColorHint="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/sign_in_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/enterEmail" />
+
+        <TextView
+            android:id="@+id/welcome_note"
+            android:layout_width="234dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="84dp"
+            android:layout_marginBottom="84dp"
+            android:foregroundGravity="center_vertical|center|center_horizontal"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/welcome"
+            android:textColor="@color/cardview_light_background"
+            android:textSize="34sp"
+            app:layout_constraintBottom_toTopOf="@+id/enter_full_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/sign_up_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="22dp"
+            android:onClick="signup"
+            android:text="@string/sign_up"
+            android:textColor="@color/white"
+            app:backgroundTint="@color/Gray"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/cancel_btn"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/enter_password" />
+
+        <Button
+            android:id="@+id/cancel_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="cancel"
+            android:text="@string/cancel"
+            android:textColor="@color/white"
+            app:backgroundTint="@color/Gray"
+            app:layout_constraintBottom_toBottomOf="@+id/background_img"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/sign_up_btn"
+            app:layout_constraintTop_toBottomOf="@+id/sign_in_btn"
+            app:layout_constraintVertical_bias="0.261" />
+
+        <Button
+            android:id="@+id/sign_in_btn"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="273dp"
+            android:foregroundGravity="center"
+            android:gravity="center_horizontal|fill_horizontal|center_vertical"
+            android:onClick="login"
+            android:text="@string/sign_in"
+            android:textColor="@color/Aqua"
+            android:textColorHint="@color/Aqua"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/enter_password"
+            app:layout_constraintStart_toEndOf="@+id/sign_up_btn"
+            app:layout_constraintTop_toBottomOf="@+id/enter_password"
+            tools:ignore="MissingConstraints,UnknownId" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

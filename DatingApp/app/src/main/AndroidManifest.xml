@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.txy822.android_personality_based_dating_app" >
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.INTERNE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+        android:allowBackup="true"
+        android:debuggable="true"
+        android:icon="@drawable/icon_app"
+        android:label="OneLove"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@drawable/icon_app"
+        android:supportsRtl="true"
+        android:testOnly="false"
+        android:theme="@style/Theme.Android_Personality_based_Dating_App"
+        android:usesCleartextTraffic="true"
+        tools:ignore="HardcodedDebugMode" >
+        <activity
+            android:name=".UpdateLoginDetail"
+            android:exported="false" />
+        <activity
+            android:name=".UpdatePassword"
+            android:exported="false" />
+        <activity
+            android:name=".Main"
+            android:exported="false" />
+
+        <meta-data
+            android:name="com.google.android.wearable.standalone"
+            android:value="true" />
+
+        <activity android:name=".Home" />
+        <activity android:name=".Login" />
+        <activity android:name=".SignUp" />
+        <activity android:name=".PostPasswordUpdate" />
+        <activity android:name=".ChatActivity" />
+        <activity
+            android:name=".StartApp"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <service
+            android:name=".MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />            </intent-filter>
+        </service>
+    </application>
+
+</manifest>
