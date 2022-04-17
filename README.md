@@ -27,6 +27,14 @@ Personality_based_Dating_App_using_NLP_from_Tweets/PersonalityClassifier/
 3. NLPAUG
 4. TFLITE model maker
 
+The model performance was evaluated using different methods such as accuracy, f1-score, recall, roc_auc and condussion matrics
+
+<img src="PersonalityClassifier/Images/roc_auc_ABS_512.png" alt ="Overall structure of the app "/>
+<img src="PersonalityClassifier/Images/model_layers.png" alt ="Overall structure of the app "/>
+<img src="PersonalityClassifier/Images/cm_ABS_512.png" alt ="Overall structure of the app "/>
+<img src="PersonalityClassifier/Images/bert_dense_model2.png" alt ="bert_dense_structure"/>
+<img src="PersonalityClassifier/Images/OverallComparation.png" alt ="OverallComparation"/>
+
 
 
 ## 2. Dating application
