@@ -102,7 +102,7 @@ public class UpdateProfileFragment extends Fragment {
         location=(EditText)view.findViewById(R.id.enter_location);
 
         //google places api access key
-        Places.initialize(getActivity().getApplicationContext(), "AIzaSyDZJLLLAz2-H3C57IYT9fdAIWrrvkHaiOU");
+        Places.initialize(getActivity().getApplicationContext(), "put your google places api key here");
 
         date_of_birth=(EditText)view.findViewById(R.id.enter_date_of_birth);
 //        age=(EditText)view.findViewById(R.id.age);
