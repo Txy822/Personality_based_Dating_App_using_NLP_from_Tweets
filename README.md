@@ -22,10 +22,10 @@ Personality_based_Dating_App_using_NLP_from_Tweets/PersonalityClassifier/
 - Run each section of the code. 
 
 ### Requirements 
-1. Tensorflow and tensorflow_hub
+1. TensorFlow and TensorFlow Hub
 2. Transformer
 3. NLPAUG
-4. TFLITE model maker
+4. TFLITE Model Maker
 
 The classifier model uses the current state of the art transformer based language model which is Bidirectional Encoder Representations from Transformers (BERT) as pretrained model and the multi-layer neural network to setup the model architecture. The highlevel view of model architecture and the model layes are shown below.
 <img src="PersonalityClassifier/Images/bert_dense_model2.png" alt ="bert_dense_structure"/>
